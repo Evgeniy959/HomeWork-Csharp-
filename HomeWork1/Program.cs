@@ -32,9 +32,9 @@ namespace Homework1
             while (key != '.');
             Console.WriteLine();
             Console.Write("Количество пробелов: ");
-            Console.WriteLine($"{count_space}");
+            Console.WriteLine($"{count_space}");*/
 //ДЗ 2.  -------------------------------------------------------------------------------------------------------------------------------
-            int down = 0;
+            /*int down = 0;
             int up = 0;
             char symbolChar = ' ';
             Console.WriteLine("Введите маленькие и большие буквы:");
@@ -143,18 +143,18 @@ namespace Homework1
 
             //ДЗ 5.  ----------------------------------------------------------------------------------------------------------------------------
 
-            /*String str;
+            String str;
             Console.WriteLine("Введите строку: ");
             str = Console.ReadLine();
-            Console.WriteLine($"{str}");           
+            String copy = str.ToLower();
             Console.Write("Строка: ");
-            Console.Write(IsPalindrome(str) ? "" : "НЕ ");
+            Console.Write(IsPalindrome(copy) ? "" : "НЕ ");
             Console.WriteLine("является полиндромом!");           
         }
-        static bool IsPalindrome(String str)
+        static bool IsPalindrome(String copy)
         {
-            return str == new String(str.Reverse().ToArray());
-        }*/
+            return copy == new String(copy.Reverse().ToArray());
+        }
 
 //ДЗ 6.  ----------------------------------------------------------------------------------------------------------------------------
 
@@ -168,14 +168,14 @@ namespace Homework1
         Console.ReadLine();*/
 
         //2 способ:
-        Console.WriteLine("Введите текст:");
+        /*Console.WriteLine("Введите текст:");
         string str = Console.ReadLine();
         int count = 1;
         foreach (char item in str)
             if (item == ' ') count++;
         Console.Write("Количество слов: ");
         Console.WriteLine(count);
-       }
+       }*/
     }
 }
 
