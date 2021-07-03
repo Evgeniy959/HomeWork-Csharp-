@@ -13,7 +13,7 @@
 using System;
 using System.Linq;
 
-namespace Homework_1
+namespace Homework1
 {
     class Program
     {
