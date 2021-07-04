@@ -33,10 +33,8 @@ namespace Homework1
             Console.WriteLine();
             Console.Write("Количество пробелов: ");
             Console.WriteLine($"{count_space}");*/
-//ДЗ 2.  -------------------------------------------------------------------------------------------------------------------------------
-            /*int down = 0;
-            int up = 0;
-            char symbolChar = ' ';
+            //ДЗ 2.  -------------------------------------------------------------------------------------------------------------------------------            
+            /*char symbolChar = ' ';
             Console.WriteLine("Введите маленькие и большие буквы:");
             while (symbolChar != '.')
             {
@@ -45,44 +43,47 @@ namespace Homework1
                 if (symbol >= 'A' && symbol <= 'Z' || symbol >= 'А' && symbol <= 'Я')
                 {
                     symbol += 32;
-                    ++down;
+                    
                 }
                 else if (symbol >= 'a' && symbol <= 'z' || symbol >= 'а' && symbol <= 'я')
                 {
                     symbol -= 32;
-                    ++up;
+
                 }
                 symbolChar = (char)symbol;
                 Console.Write(symbolChar);            
             }
-            Console.WriteLine();
-            Console.Write("Количество измененных символов: ");
-            Console.WriteLine($"{down + up}");*/
+            Console.WriteLine();*/
 
-            //ДЗ 3.  -------------------------------------------------------------------------------------------------------------------------------
+//ДЗ 3.  -------------------------------------------------------------------------------------------------------------------------------
             /*int a, b;
             Console.WriteLine("Введите числа A < B: ");
             a = Convert.ToInt32(Console.ReadLine());
             b = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
-            while (a <= b)
+            if (a > b)
             {
+                Console.WriteLine("Повторите ввод чтобы было A < B");
+                return;
+            } 
+            while (a <= b)
+            {               
                 for (int i = 0; i < a; i++)
                     Console.Write($"{a}");
                 Console.WriteLine();
-                a++;
-            }*/
+                a++;               
+            }
 
-            //ДЗ 4.  ----------------------------------------------------------------------------------------------------------------------------
-            /*const int m = 8;
-            const int n = 6;
-            int[] arrayM = new int[m] { 2, 2, 4, 5, 6, 7, 8, 9 };
-            int[] arrayN = new int[n] { 2, 2, 4, 5, 6, 7 };
+//ДЗ 4.  ----------------------------------------------------------------------------------------------------------------------------
+            int m = 8;
+            int n = 6;
+            int[] arrayM = new int[m];
+            int[] arrayN = new int[n];
             int size = 0;
             RandomArray(arrayM);
             PrintArray(arrayM);
             RandomArray(arrayN);
-            PrintArray(arrayN);
+            PrintArray(arrayN);            
             for (int i = 0; i < m; i++)
             {
 
@@ -118,7 +119,7 @@ namespace Homework1
                 }
             }
             Console.WriteLine();
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < it; i++)
             {
                 Console.Write($"{arrayC[i]}");
             }
@@ -141,22 +142,27 @@ namespace Homework1
             Console.WriteLine();
         }*/
 
-            //ДЗ 5.  ----------------------------------------------------------------------------------------------------------------------------
+        //ДЗ 5.  ----------------------------------------------------------------------------------------------------------------------------
 
-            String str;
-            Console.WriteLine("Введите строку: ");
-            str = Console.ReadLine();
-            String copy = str.ToLower();
-            Console.Write("Строка: ");
-            Console.Write(IsPalindrome(copy) ? "" : "НЕ ");
-            Console.WriteLine("является полиндромом!");           
+        String str;
+        Console.WriteLine("Введите строку: ");
+        str = Console.ReadLine();
+        char[] element = new char[]{ '*', ' ', '\'' };
+        String copystr = str.ToLower();
+        Console.Write("Строка: ");
+        Console.Write(IsPalindrome(copystr) ? "" : "НЕ ");
+        Console.WriteLine("является полиндромом!");
+            foreach (int sym in element)
+            {
+                copystr = copystr.Replace(sym.ToString(), "");
+            }
         }
-        static bool IsPalindrome(String copy)
-        {
-            return copy == new String(copy.Reverse().ToArray());
-        }
+    static bool IsPalindrome(String copystr)
+    {
+        return copystr == new String(copystr.Reverse().ToArray());
+    }
 
-//ДЗ 6.  ----------------------------------------------------------------------------------------------------------------------------
+        //ДЗ 6.  ----------------------------------------------------------------------------------------------------------------------------
 
         //1 способ: 
         /*Console.WriteLine("Введите текст:");
@@ -170,11 +176,14 @@ namespace Homework1
         //2 способ:
         /*Console.WriteLine("Введите текст:");
         string str = Console.ReadLine();
-        int count = 1;
-        foreach (char item in str)
-            if (item == ' ') count++;
+        char[] charsToTrim = { '*', ' ', '\'' };
+        string result = str.Trim(charsToTrim);
+        int counter = 1;
+        foreach (char item in result)
+            if (item == ' ') 
+            counter++;
         Console.Write("Количество слов: ");
-        Console.WriteLine(count);
+        Console.WriteLine(counter);
        }*/
     }
 }
