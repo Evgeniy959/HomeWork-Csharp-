@@ -163,7 +163,7 @@ namespace Homework1
 
         //ДЗ 6.  ----------------------------------------------------------------------------------------------------------------------------
 
-        //1 способ:
+        //1 способ (по количеству пробелов):
         Console.WriteLine("Введите текст:");
         string str = Console.ReadLine();
         string result1 = str.Trim(); 
@@ -175,7 +175,7 @@ namespace Homework1
         Console.Write("Количество слов: ");
         Console.WriteLine(counter);
 
-        //2 способ: 
+        //2 способ(по количеству слов): 
         Console.WriteLine("Введите текст:");
         string text = Console.ReadLine();
         char[] text1 = text.ToCharArray();
