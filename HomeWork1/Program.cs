@@ -12,6 +12,7 @@
 
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Homework1
 {
@@ -144,47 +145,58 @@ namespace Homework1
 
         //ДЗ 5.  ----------------------------------------------------------------------------------------------------------------------------
 
-        String str;
+        /*String str;
         Console.WriteLine("Введите строку: ");
-        str = Console.ReadLine();
-        char[] element = new char[]{ '*', ' ', '\'' };
+        str = Console.ReadLine();        
         String copystr = str.ToLower();
+        String copystr1 = str.Trim();
+        String copystr2 = copystr1.Replace(" ", "");
+        Console.WriteLine($"{copystr2}");
         Console.Write("Строка: ");
-        Console.Write(IsPalindrome(copystr) ? "" : "НЕ ");
+        Console.Write(IsPalindrome(copystr2) ? "" : "НЕ ");
         Console.WriteLine("является полиндромом!");
-            foreach (int sym in element)
-            {
-                copystr = copystr.Replace(sym.ToString(), "");
-            }
         }
-    static bool IsPalindrome(String copystr)
-    {
-        return copystr == new String(copystr.Reverse().ToArray());
-    }
+        static bool IsPalindrome(String copystr2)
+        {
+            return copystr2 == new String(copystr2.Reverse().ToArray());
+        }*/
 
         //ДЗ 6.  ----------------------------------------------------------------------------------------------------------------------------
 
-        //1 способ: 
-        /*Console.WriteLine("Введите текст:");
-        string[] textMass;
-        string text = Console.ReadLine();
-        textMass = text.Split(' ');
-        Console.WriteLine("Количество слов:");
-        Console.WriteLine(textMass.Length);
-        Console.ReadLine();*/
-
-        //2 способ:
-        /*Console.WriteLine("Введите текст:");
+        //1 способ:
+        Console.WriteLine("Введите текст:");
         string str = Console.ReadLine();
-        char[] charsToTrim = { '*', ' ', '\'' };
-        string result = str.Trim(charsToTrim);
+        string result1 = str.Trim(); 
+        string result2 = Regex.Replace(result1, "[ ]+", " ");        
         int counter = 1;
-        foreach (char item in result)
+        foreach (char item in result2)
             if (item == ' ') 
             counter++;
         Console.Write("Количество слов: ");
         Console.WriteLine(counter);
-       }*/
+
+        //2 способ: 
+        Console.WriteLine("Введите текст:");
+        string text = Console.ReadLine();
+        char[] text1 = text.ToCharArray();
+        int count = 0;
+        bool spaceflag = false;
+            foreach (char sym in text1)
+            {
+                if (sym != ' ' && (spaceflag == false))
+                {
+                    spaceflag = true;
+                    count++;
+                }
+                if (sym == ' ' && (spaceflag == true))
+                {
+                    spaceflag = false;
+                }
+                Console.Write($"Количество слов: {count}");
+                Console.WriteLine();
+            }
+
+        }
     }
 }
 
