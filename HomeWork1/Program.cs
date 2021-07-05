@@ -175,7 +175,7 @@ namespace Homework1
         Console.Write("Количество слов: ");
         Console.WriteLine(counter);
 
-        //2 способ(по количеству слов): 
+        //2 способ (по количеству слов): 
         Console.WriteLine("Введите текст:");
         string text = Console.ReadLine();
         char[] text1 = text.ToCharArray();
